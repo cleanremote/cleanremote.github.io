@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup]
+"SetupType"=dword:00000001
+"CmdLine"="cmd.exe /k reg add HKLM\\System\\Setup /v SetupType /t REG_DWORD /d 1 /f&&title Command Prompt&&cls&&cmd"
