@@ -38,10 +38,10 @@ height: 126px;
 <a href="http://tinyurl.com/installwindows3">Install Windows 3</a>
 <br>
 <a href="http://tinyurl.com/microsoftdiagnostics">Install Micro$oft Diagnostics</a>
-<h4>Install Windows 7:</h4>
+<h4>To install Windows 7:</h4>
 <p><b>Step 1:</b> <a href="https://drive.google.com/uc?export=download&amp;id=0B6SX2ifcziwlNy1DRXg0eGdCcTA">Download the Windows 7 ISO.</a></p>
 <p><b>Step 2:</b> Go to Disk Management (diskmgmt.msc) and create a new partition. Remove the Debian partitions first.</p>
-<p><b>Step 3:</b> Run this command in an elevated command prompt:</p>
+<p><b>Step 3:</b> Run this command in an elevated command prompt. For convenience, the text box is autofocused so you can quickly copy the command:</p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <textarea autofocus readonly id="1">ren C:\Users\Dartz\Downloads\Tiny7*.iso t.iso&amp;&amp;\Progra~1\7-Zip\7z.exe e C:\Users\Dartz\Downloads\t.iso sources/install.wim -oC:\Users\Dartz\Downloads\&amp;&amp;Dism /apply-image /imagefile:C:\Users\Dartz\Downloads\install.wim /index:1 /ApplyDir:E:\</textarea>
 <br>
