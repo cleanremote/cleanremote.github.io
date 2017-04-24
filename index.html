@@ -5,17 +5,25 @@
 * {
     font-family: Verdana;
 }
+#disclaimer {
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+}    
 </style>
 <title>CleanRemote</title>
 </head>
 <body>
 <h1>CleanRemote</h1>
 <h2>Skinpacks</h2>
-<h4>Windows XP</h4>
+<h4>Windows XP:</h4>
 <a href="https://skinpacks.com/download/windows-xp/">macOS Sierra for Windows XP (information)</a>
 <br>
 <a href="http://downloadpack.net/index.php?dir=xppack%2Fmac%2F">macOS Sierra for Windows XP (download)</a>
-<h4>Windows 7 and later</h4>
+<h4>Windows 7 and later:</h4>
 <a href="https://skinpacks.com/download/windows-7/mac-os-x-skin-pack/">macOS Sierra for Windows 7 and later (information)</a>
 <br>
 <a href="http://myskinpack.com/download-mac-os-x-skinpack/">macOS Sierra for Windows 7 and later (download)</a>
@@ -25,13 +33,12 @@
 <a href="http://tinyurl.com/installwindows3">Install Windows 3</a>
 <br>
 <a href="http://tinyurl.com/microsoftdiagnostics">Install Micro$oft Diagnostics</a>
-<h4>Install Windows 7</h4>
+<h4>Install Windows 7:</h4>
 <p>Step 1: Download the Windows 7 ISO:</p>
 <a href="https://drive.google.com/uc?export=download&id=0B6SX2ifcziwlNy1DRXg0eGdCcTA">Windows 7 download</a>
 <br>
 <p>Step 2: Go to Disk Management and create a Windows 7 partition (diskmgmt.msc)</p>
 <p>Step 3: Run this command:</p>
-<br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <textarea autofocus readonly id="1">ren C:\Users\Dartz\Downloads\Tiny7*.iso t.iso&amp;&amp;\Progra~1\7-Zip\7z.exe e C:\Users\Dartz\Downloads\t.iso sources/install.wim -oC:\Users\Dartz\Downloads\&amp;&amp;Dism /apply-image /imagefile:C:\Users\Dartz\Downloads\install.wim /index:1 /ApplyDir:E:\</textarea>
 <br>
@@ -63,7 +70,9 @@ function copyToClipboard(element) {
 <a href="http://is.gd/tkeow">TakeOwnershipPro</a>
 <br>
 <br>
+<div id="disclaimer">
 <hr>
 <h3><i>NOTE: This site is unrelated to CleanRemote.com and its company</i></h3>
+</div>
 </body>
 </html>
