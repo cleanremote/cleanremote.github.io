@@ -19,7 +19,7 @@ height: 126px;
 <body>
 <div id="header">
 <h1>&nbsp;CleanRemote</h1>
-<h3><i>&nbsp;Please note that this site is unrelated to <a href="http://cleanremote.com">CleanRemote.com</a> and its company.</i></h3>
+<h3>&nbsp;Please note that this site is unrelated to <a href="http://cleanremote.com">CleanRemote.com</a> and its company.</h3>
 <hr>    
 </div>
 <br><br><br><br><br><br>
@@ -43,12 +43,12 @@ height: 126px;
 <a href="https://drive.google.com/uc?export=download&amp;id=0B6SX2ifcziwlNy1DRXg0eGdCcTA">Windows 7 download</a>
 <br>
 <p>Step 2: Go to Disk Management (diskmgmt.msc) and create a new partition.</p>
-<p>Step 3: Run this command:</p>
+<p>Step 3: In an elevated command prompt, run this command:</p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <textarea autofocus readonly id="1">ren C:\Users\Dartz\Downloads\Tiny7*.iso t.iso&amp;&amp;\Progra~1\7-Zip\7z.exe e C:\Users\Dartz\Downloads\t.iso sources/install.wim -oC:\Users\Dartz\Downloads\&amp;&amp;Dism /apply-image /imagefile:C:\Users\Dartz\Downloads\install.wim /index:1 /ApplyDir:E:\</textarea>
 <br>
 <button onclick="copyToClipboard('#1')">Copy command to clipboard</button>
-<input type="text" placeholder="Test copied text here">
+<input type="text" placeholder="Test copied command here...">
 <script>
 function copyToClipboard(element) {
   var $temp = $("<input>");
