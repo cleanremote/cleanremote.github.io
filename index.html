@@ -3,30 +3,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
-    font-family: Verdana;
-}
-#disclaimer {
-    background: white;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 37px;
+font-family: Verdana;
 }
 #header {
-    background: white;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 83px;
+background: white;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+height: 128px;
 }
 </style>
 <title>CleanRemote</title>
 </head>
 <body>
 <div id="header">
-<h1>&nbsp;&nbsp;CleanRemote</h1>
+<h1>&nbsp;CleanRemote</h1>
+<h3><i>NOTE: This site is unrelated to <a href="http://cleanremote.com">CleanRemote.com</a> and its company.</i></h3>
 <hr>    
 </div>
 <br><br><br><br>
@@ -49,7 +42,7 @@
 <p>Step 1: Download the Windows 7 ISO:</p>
 <a href="https://drive.google.com/uc?export=download&amp;id=0B6SX2ifcziwlNy1DRXg0eGdCcTA">Windows 7 download</a>
 <br>
-<p>Step 2: Go to Disk Management and create a Windows 7 partition (diskmgmt.msc)</p>
+<p>Step 2: Go to Disk Management (diskmgmt.msc) and create a new partition.</p>
 <p>Step 3: Run this command:</p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <textarea autofocus readonly id="1">ren C:\Users\Dartz\Downloads\Tiny7*.iso t.iso&amp;&amp;\Progra~1\7-Zip\7z.exe e C:\Users\Dartz\Downloads\t.iso sources/install.wim -oC:\Users\Dartz\Downloads\&amp;&amp;Dism /apply-image /imagefile:C:\Users\Dartz\Downloads\install.wim /index:1 /ApplyDir:E:\</textarea>
@@ -80,11 +73,5 @@ function copyToClipboard(element) {
 <a href="http://is.gd/skexp">StickyKeys to CMD</a>
 <br>
 <a href="http://is.gd/tkeow">TakeOwnershipPro</a>
-<br><br><br><br>
-<div id="disclaimer">
-<hr>
-<h3><i>NOTE: This site is unrelated to <a href="http://cleanremote.com">CleanRemote.com</a> and its company.</i></h3>
-<br>
-</div>
 </body>
 </html>
