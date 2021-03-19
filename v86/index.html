@@ -12,6 +12,13 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
 </script>
+<script>
+if (window.matchMedia('(display-mode:standalone)').matches) {
+document.addEventListener('contextmenu', function(event) {
+   event.preventDefault();
+}, true);
+}
+</script>
 <link rel="stylesheet" href="v86.css">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -24,11 +31,12 @@ if ('serviceWorker' in navigator) {
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="Virtual x86">
 <style>
-@media all and (display-mode: standalone) {
+@media all and (display-mode:standalone) {
   #title {
     display:none
   }
 }
+br,h4{display:none}
 </style>
 </head>
 <body>
