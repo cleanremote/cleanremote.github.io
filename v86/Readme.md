@@ -30,28 +30,6 @@ list of emulated hardware:
 - A virtio filesystem.
 - A SoundBlaster 16 sound card.
 
-Demos
--
-
-[Arch Linux](https://copy.sh/v86/?profile=archlinux) —
-[Damn Small Linux](https://copy.sh/v86/?profile=dsl) —
-[Buildroot Linux](https://copy.sh/v86/?profile=buildroot) —
-[ReactOS](https://copy.sh/v86/?profile=reactos) —
-[Windows 2000](https://copy.sh/v86/?profile=windows2000) —
-[Windows 98](https://copy.sh/v86/?profile=windows98) —
-[Windows 95](https://copy.sh/v86/?profile=windows95) —
-[Windows 1.01](https://copy.sh/v86/?profile=windows1) —
-[MS-DOS](https://copy.sh/v86/?profile=msdos) —
-[FreeDOS](https://copy.sh/v86/?profile=freedos) —
-[FreeBSD](https://copy.sh/v86/?profile=freebsd) —
-[OpenBSD](https://copy.sh/v86/?profile=openbsd) —
-[9front](https://copy.sh/v86/?profile=9front) —
-[Haiku](https://copy.sh/v86/?profile=haiku) —
-[Oberon](https://copy.sh/v86/?profile=oberon) —
-[KolibriOS](https://copy.sh/v86/?profile=kolibrios) —
-[QNX](https://copy.sh/v86/?profile=qnx)
-
-
 Compatibility
 -
 
@@ -72,8 +50,10 @@ Here's an overview of the operating systems supported in v86:
 - Haiku works.
 - Android x86 1.6-r2 works if one selects VESA mode at the boot prompt. Newer
   versions haven't been tested.
-- Windows 1, 3.0, 95, 98, ME and 2000 work. Other versions currently don't (see [#86](https://github.com/copy/v86/issues/86), [#208](https://github.com/copy/v86/issues/208)).
-  - In Windows 2000 and higher the PC type has to be changed from ACPI PC to Standard PC
+- Windows 1, 3.0, 95, 98, ME, 2000, XP, Vista, and 7 work. Other versions may not work (see [#86](https://github.com/copy/v86/issues/86), [#208](https://github.com/copy/v86/issues/208)) or haven't been tested.
+  - In Windows 2000 and XP, the PC type may have to be changed from ACPI PC to Standard PC.
+  - In Windows Vista and later, make sure to enable ACPI.
+  - Windows 8 and later currently doesn't boot due to unknown reasons (see [#393](https://github.com/copy/v86/issues/393)).
 - Many hobby operating systems work.
 - 9front works.
 - Plan 9 doesn't work.
@@ -84,8 +64,6 @@ Here's an overview of the operating systems supported in v86:
   `boot -c`, then at the `UKC>` prompt `disable mpbios` and `exit`.
 - NetBSD works only with a custom kernel, see [#350](https://github.com/copy/v86/issues/350).
 - SerenityOS doesn't work due to missing PAE support.
-
-You can get some infos on the disk images here: https://github.com/copy/images.
 
 How to build, run and embed?
 -
