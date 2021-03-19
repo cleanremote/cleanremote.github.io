@@ -1885,8 +1885,10 @@ CPU.prototype.cpuid = function()
             if(VMWARE_HYPERVISOR_PORT) ecx |= 1 << 31; // hypervisor
             edx = (true /* have fpu */ ? 1 : 0) |      // fpu
                     vme | 1 << 3 | 1 << 4 | 1 << 5 |   // vme, pse, tsc, msr
-                    1 << 8 | 1 << 11 | 1 << 13 | 1 << 15 | // cx8, sep, pge, cmov
-                    1 << 23 | 1 << 24 | 1 << 25 | 1 << 26;   // mmx, fxsr, sse1, sse2
+                    1 << 8 | 1 << 11 | 1 << 13 | 1 << 15 |  // cx8, sep, pge, cmov
+                    1 << 23 | 1 << 24 | 1 << 25 | 1 << 26 | // mmx, fxsr, sse1, sse2
+                    // Enable PAE bit to make Windows 8 and later work
+                    1 << 6; // pae
 
             if(this.acpi_enabled[0]) //&& this.apic_enabled[0])
             {
@@ -1946,6 +1948,11 @@ CPU.prototype.cpuid = function()
             // maximum supported extended level
             eax = 5;
             // other registers are reserved
+            break;
+
+        case 0x80000001|0:
+            // Enable PAE and NX bits to make Windows 8 and later work
+            1 << 6 | 1 << 20; // pae, nx
             break;
 
         case 0x40000000|0: // hypervisor
