@@ -7,7 +7,11 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 <script src="loader.js"></script>
-<script src="pwa.js" defer></script>
+<script defer>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
 <link rel="stylesheet" href="v86.css">
 <link rel="manifest" href="manifest.json">
 </head>
@@ -36,7 +40,7 @@
             </tr>
 
             <tr>
-                <td>Slave Hard drive disk image</td>
+                <td>Slave hard drive disk image</td>
                 <td><input type="file" id="hdb_image"><br></td>
             </tr>
 
@@ -57,7 +61,7 @@
             </tr>
 
             <tr>
-                <td><label for="video_memory_size">Video Memory size</label></td>
+                <td><label for="video_memory_size">Video memory size</label></td>
                 <td>
                     <input id="video_memory_size" type="number" value="8" min="1" max="128" step="1"> MB<br>
                 </td>
@@ -108,13 +112,13 @@
         </table>
 
         <br>
-        <button id="start_emulation">Start Emulation</button>
+        <button id="start_emulation">Start emulation</button>
         <br>
         <br>
     </div>
 
     <div id="runtime_options" style="display: none">
-        <input type="button" value="Dump Registers" id="dump_regs">
+        <input type="button" value="Dump registers" id="dump_regs">
         <input type="button" value="Dump GDT/LDT" id="dump_gdt">
         <input type="button" value="Dump IDT" id="dump_idt">
         <input type="button" value="Dump page tables" id="dump_pt">
@@ -130,10 +134,10 @@
         <input type="button" value="Get second floppy image" id="get_fdb_image">
         <input type="button" value="Get hard disk image" id="get_hda_image">
         <input type="button" value="Get second hard disk image" id="get_hdb_image">
-        <input type="button" value="Get cdrom image" id="get_cdrom_image">
-        <input type="button" value="Save State" id="save_state">
-        <input type="button" value="Load State" id="load_state"> <input type="file" style="display: none" id="load_state_input">
-        <input type="button" value="Memory Dump" id="memory_dump">
+        <input type="button" value="Get CD image" id="get_cdrom_image">
+        <input type="button" value="Save state" id="save_state">
+        <input type="button" value="Load state" id="load_state"> <input type="file" style="display:none" id="load_state_input">
+        <input type="button" value="Memory dump" id="memory_dump">
         <input type="button" value="Disable mouse" id="toggle_mouse">
         <input type="button" value="Lock mouse" id="lock_mouse">
         <input type="button" value="Go fullscreen" id="fullscreen">
@@ -141,16 +145,16 @@
 
         <label>
             Scale:
-            <input type="number" min="0.25" step="0.25" value="1.0" id="scale" style="width: 50px">
+            <input type="number" min="0.25" step="0.25" value="1.0" id="scale" style="width:50px">
         </label>
 
         <br>
-        <label id="change_fda" style="display: none">
+        <label id="change_fda" style="display:none">
             Change floppy:
             <input type="file">
         </label>
 
-        <label id="change_cdrom" style="display: none">
+        <label id="change_cdrom" style="display:none">
             Change CD:
             <input type="file">
         </label>
@@ -162,7 +166,7 @@
     <br>
 </div>
 
-<div id="screen_container" style="display: none">
+<div id="screen_container" style="display:none">
     <div id="screen"></div>
     <canvas id="vga"></canvas>
 
@@ -177,7 +181,7 @@
     Speed: <span id="speed">0</span> mIPS<br>
     Avg speed: <span id="avg_speed">0</span> mIPS<br>
     <br>
-    <div id="info_storage" style="display: none">
+    <div id="info_storage" style="display:none">
         <b>IDE device (HDA or CDROM)</b><br>
         Sectors read: <span id="info_storage_sectors_read">0</span><br>
         Bytes read: <span id="info_storage_bytes_read">0</span><br>
@@ -186,7 +190,7 @@
         Status: <span id="info_storage_status"></span><br>
         <br>
     </div>
-    <div id="info_filesystem" style="display: none">
+    <div id="info_filesystem" style="display:none">
         <b>9p Filesystem</b><br>
         Bytes read: <span id="info_filesystem_bytes_read">0</span><br>
         Bytes written: <span id="info_filesystem_bytes_written">0</span><br>
@@ -194,7 +198,7 @@
         Status: <span id="info_filesystem_status"></span><br>
         <br>
     </div>
-    <div id="info_network" style="display: none">
+    <div id="info_network" style="display:none">
         <b>Network</b><br>
         Bytes received: <span id="info_network_bytes_received">0</span><br>
         Bytes transmitted: <span id="info_network_bytes_transmitted">0</span><br>
@@ -208,7 +212,7 @@
     Mouse: <span id="info_mouse_enabled">No</span><br>
 </div>
 
-<div id="filesystem_panel" style="display: none">
+<div id="filesystem_panel" style="display:none">
     <label>
         Send files to emulator<br>
         <input type="file" id="filesystem_send_file" multiple>
@@ -223,9 +227,9 @@
 <div id="debug_panel" style="display: none">
 </div>
 
-<br style="clear: both"><br>
+<br style="clear:both"><br>
 
-<textarea readonly id="log" style="display: none"></textarea>
+<textarea readonly id="log" style="display:none"></textarea>
 
 <textarea spellcheck="false" cols="40" rows="12" id="serial" style="display: none">
 </textarea>
