@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+<meta charset="UTF-8">
 <title>Virtual x86</title>
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-
 <script src="loader.js"></script>
 <script defer>
 if ('serviceWorker' in navigator) {
@@ -14,12 +14,30 @@ if ('serviceWorker' in navigator) {
 </script>
 <link rel="stylesheet" href="v86.css">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="msapplication-TileImage" content="./icon.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="theme-color" content="#000000">
+<link rel="apple-touch-icon" sizes="144x144" href="./icon.png">
+<link rel="apple-touch-icon" sizes="48x48" href="./icon48.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Virtual x86">
+<style>
+@media all and (display-mode: standalone) {
+  #title {
+    display:none
+  }
+}
+</style>
 </head>
 <body>
 <div>
     <div id="boot_options">
+      <div id="title">
         <h4>Virtual x86</h4>
         <hr>
+      </div>
 
         <table>
             <tr>
