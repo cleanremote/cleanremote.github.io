@@ -1,5 +1,9 @@
 [![Join the chat at https://gitter.im/copy/v86](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/copy/v86)
 
+Changes made to copy's v86:
+- Added PWA support (tested in Chrome)
+- Added PAE and NX bits to CPUID to make Windows 8/10 work (it still doesn't)
+
 v86 emulates an x86-compatible CPU and hardware. Machine code is translated to
 WebAssembly modules at runtime in order to achieve decent performance. Here's a
 list of emulated hardware:
