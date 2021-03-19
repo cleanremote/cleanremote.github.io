@@ -36,7 +36,11 @@ document.addEventListener('contextmenu', function(event) {
     display:none
   }
 }
-br,h4{display:none}
+br,h4{
+  user-select:none;
+  -webkit-user-select:none;
+  -ms-user-select:none
+}
 </style>
 </head>
 <body>
