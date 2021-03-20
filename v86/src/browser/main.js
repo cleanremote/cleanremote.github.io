@@ -196,6 +196,7 @@
                 vga_memory_size: 16 * 1024 * 1024,
                 hda: {
                     "url": "http://10.0.0.10:666/7.img",
+                    "size": 6442450944,
                     "async": true,
                 },
                 name: "Windows 7",
