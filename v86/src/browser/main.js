@@ -196,7 +196,7 @@
                 vga_memory_size: 16 * 1024 * 1024,
                 hda: {
                     "url": "http://jones.mywire.org:666/XP.img",
-                    "size": ,
+                    "size": 4294967296,
                     "async": true,
                 },
                 name: "Windows XP",
@@ -211,7 +211,7 @@
                 vga_memory_size: 16 * 1024 * 1024,
                 hda: {
                     "url": "http://jones.mywire.org:666/XP.img",
-                    "size": ,
+                    "size": 4294967296,
                     "async": true,
                 },
                 name: "Windows XP",
