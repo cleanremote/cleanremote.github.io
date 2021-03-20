@@ -191,6 +191,32 @@
         // Abandonware OS images are from https://winworldpc.com/library/operating-systems
         var oses = [
             {
+                id: "windowsxp",
+                memory_size: 512 * 1024 * 1024,
+                vga_memory_size: 16 * 1024 * 1024,
+                hda: {
+                    "url": "http://jones.mywire.org:666/XP.img",
+                    "size": ,
+                    "async": true,
+                },
+                name: "Windows XP",
+                state: {
+                    "url": "http://jones.mywire.org:666/XP.zst",
+                },
+                preserve_mac_from_state_image: true,
+            },
+            {
+                id: "windowsxp-boot",
+                memory_size: 512 * 1024 * 1024,
+                vga_memory_size: 16 * 1024 * 1024,
+                hda: {
+                    "url": "http://jones.mywire.org:666/XP.img",
+                    "size": ,
+                    "async": true,
+                },
+                name: "Windows XP",
+            },
+            {
                 id: "windows7",
                 memory_size: 512 * 1024 * 1024,
                 vga_memory_size: 16 * 1024 * 1024,
@@ -414,12 +440,12 @@
                 id: "windows2000",
                 memory_size: 512 * 1024 * 1024,
                 hda: {
-                    "url": "images/windows2k.img",
+                    "url": "https://copy.sh/v86/images/windows2k.img",
                     "async": true,
                 },
                 name: "Windows 2000",
                 state: {
-                    "url": HOST + "windows2k_state.bin.zst",
+                    "url": "https://k.copy.sh/windows2k_state.bin.zst",
                 },
                 preserve_mac_from_state_image: true,
             },
@@ -427,7 +453,7 @@
                 id: "windows2000-boot",
                 memory_size: 512 * 1024 * 1024,
                 hda: {
-                    "url": "images/windows2k.img",
+                    "url": "https://copy.sh/v86/images/windows2k.img",
                     "async": true,
                 },
                 boot_order: 0x132,
