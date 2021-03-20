@@ -200,10 +200,21 @@
                     "async": true,
                 },
                 name: "Windows 7",
-                //state: {
-                //    "url": "http://jones.mywire.org:666/7.zst",
-                //},
-                //preserve_mac_from_state_image: true,
+                state: {
+                    "url": "http://jones.mywire.org:666/7.zst",
+                },
+                preserve_mac_from_state_image: true,
+            },
+            {
+                id: "windows7-boot",
+                memory_size: 512 * 1024 * 1024,
+                vga_memory_size: 16 * 1024 * 1024,
+                hda: {
+                    "url": "http://jones.mywire.org:666/7.img",
+                    "size": 6442450944,
+                    "async": true,
+                },
+                name: "Windows 7",
             },
             {
                 id: "archlinux",
