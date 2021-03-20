@@ -440,12 +440,12 @@
                 id: "windows2000",
                 memory_size: 512 * 1024 * 1024,
                 hda: {
-                    "url": "https://copy.sh/v86/images/windows2k.img",
+                    "url": "//k.copy.sh/windows2k.img",
                     "async": true,
                 },
                 name: "Windows 2000",
                 state: {
-                    "url": "https://k.copy.sh/windows2k_state.bin.zst",
+                    "url": "//k.copy.sh/windows2k_state.bin.zst",
                 },
                 preserve_mac_from_state_image: true,
             },
@@ -453,7 +453,7 @@
                 id: "windows2000-boot",
                 memory_size: 512 * 1024 * 1024,
                 hda: {
-                    "url": "https://copy.sh/v86/images/windows2k.img",
+                    "url": "//k.copy.sh/windows2k.img",
                     "async": true,
                 },
                 boot_order: 0x132,
