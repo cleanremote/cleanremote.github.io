@@ -191,6 +191,20 @@
         // Abandonware OS images are from https://winworldpc.com/library/operating-systems
         var oses = [
             {
+                id: "windows7",
+                memory_size: 512 * 1024 * 1024,
+                vga_memory_size: 16 * 1024 * 1024,
+                hda: {
+                    "url": "http://10.0.0.10/7.img",
+                    "async": true,
+                },
+                name: "Windows 7",
+                //state: {
+                //    "url": "http://10.0.0.10/7.zst",
+                //},
+                //preserve_mac_from_state_image: true,
+            },
+            {
                 id: "archlinux",
                 name: "Arch Linux",
                 memory_size: 512 * 1024 * 1024,
