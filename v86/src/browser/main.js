@@ -203,6 +203,7 @@
                 state: {
                     "url": "http://jones.mywire.org:666/7.zst",
                 },
+                acpi: true,
                 preserve_mac_from_state_image: true,
             },
             {
@@ -214,6 +215,7 @@
                     "size": 6442450944,
                     "async": true,
                 },
+                acpi: true,
                 name: "Windows 7",
             },
             {
