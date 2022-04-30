@@ -29,3 +29,9 @@ function removech() {
      }
   }
 }
+
+if (location.hostname == "ft.hwilliams8548.com") {
+document.getElementById("page-container").innerHTML = '<iframe src="https://www.youtube.com/embed/1hfk8kh75ic?autoplay=1&controls=0&disablekb=1&modestbranding=1&loop=1" style="border:0;width:100%;height:90%"></iframe>';
+document.getElementsByTagName("head")[0].innerHTML += "<title>666</title>";
+document.getElementById("masthead-search-term").value = "haiden williams dalton ga";
+}
