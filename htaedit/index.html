@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {font-family:Segoe UI,sans-serif}
+textarea {font-family:monospace}
+</style>
+</head>
+<body>
+<form action="//www.google.com/search" method="get">
+<input type="text" name="q">
+<input type="submit" value="Google Search">
+</form>
+
+<a href="//duck.com">Go to Duck</a>
+<br>
+<label for=x>Filename: </label>
+<input id=x value=test.hta>
+<button onclick="navigator.msSaveOrOpenBlob(new Blob([y.value],{type:'text/plain'}),x.value)">Download</button>
+<p>Data:</p>
+<textarea id=y rows=20 cols=50>
+&lt;script language="VBScript"&gt;
+​
+&lt;/script&gt;
+</textarea>
+</body>
+</html>
