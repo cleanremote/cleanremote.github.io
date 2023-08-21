@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+<!--
+* {font-family: "Segoe UI",Arial,sans-serif}
+-->
+</style>
+<title>CleanRemote</title>
+</head>
+<body onload="generate()">
+<center style="margin-top:8px">
+<h1>2FA Code</h1>
+<p>Works on Internet Explorer 11</p>
+<hr>
+<form action="javascript:void(0)" onsubmit="generate()">
+<label for="key">Key:</label>
+<input id="key" style="width:256px" value="JBSWY3DPEHPK3PXP" />
+<input type="submit" value="Generate" />
+</form>
+<h2 id="code">------</h2>
+</center>
+
+<script src="https://jiangts.github.io/JS-OTP/dist/jsOTP.min.js"></script>
+<script>
+<!--
+function generate(){
+code.innerText = new jsOTP.totp().getOtp(key.value.replace(/\s+/g, ''));
+}
+//-->
+</script>
+</body>
+</html>
